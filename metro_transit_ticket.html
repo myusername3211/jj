@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metro Transit Ticket</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: red; */
+  }
+  .header {
+    /* background-color: #f0f0f0; */
+    color: #fff;
+    text-align: left;
+    padding: 20px;
+  }
+  .black_bar {
+    background-color: black;
+    padding: 25px;
+  }
+  .header h1 {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: large;
+  }
+  .header p {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: small;
+  }
+  .logo {
+    display: block;
+    margin: auto auto;
+  }
+  .mygif {
+    margin: auto;
+  }
+  .time {
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+  }
+  .ticket-info {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -180px;
+    margin-bottom: -160px;
+    width: 100%;
+  }
+  .right_align {
+    width: 15%;
+    margin-top: -25px;
+    margin-bottom: -15px;
+    margin-left: 290px;
+    margin-right: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="black_bar">
+  <img src="x.png" class="right_align">
+</div>
+<div class="header">
+  <h1>Metro Transit</h1>
+  <p>Show operator your ticket</p>
+</div>
+
+<div>
+  <img src="cropped_2.gif" class="center">
+</div>
+
+<div style="font-weight: 550; margin-top: -90px; font-size: 40px;" class="time" id="real-time-clock">
+  <b>5:08:34 PM</b>
+</div>
+
+<div class="ticket-info" style="text-align: left; padding-top: 0px;">
+  <p>Adult Rush Hour / M-F 6-9am and 3-6:30pm</p>
+  <p style="font-size: 8px;">Minneapolis/ St. Paul Metro Area</p>
+  <p>Expires Feb 1, 2024 at 6:19 PM</p>
+</div>
+
+<script src="update_time.js"></script>
+</body>
+</html>

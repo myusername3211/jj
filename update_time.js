@@ -25,6 +25,8 @@ window.onload = function() {
 
   function updateExpiration() {
     const now = new Date();
+    now.setHours(now.getHours() + 2);
+    now.setMinutes(now.getMinutes() + 30);
 
     // Define the months array to get the month in "Sep" format
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -35,8 +37,8 @@ window.onload = function() {
     const year = now.getFullYear();
 
     // Get hours and minutes
-    let hours = now.getHours() + 2;
-    let minutes = now.getMinutes() + 30;
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
     const ampm = hours >= 12 ? 'PM' : 'AM';
 
     // Convert 24-hour format to 12-hour format
@@ -47,7 +49,7 @@ window.onload = function() {
     // Combine all to create the formatted string
     const formattedDate = `Expires ${month} ${day}, ${year} at ${hours}:${minutes} ${ampm}`;
 
-    document.getElementById("expires").innerHTML = `Expires ${month} ${day}, ${year} at ${hours}:${minutes} ${ampm}`;
+    document.getElementById("expires").textContent = `Expires ${month} ${day}, ${year} at ${hours}:${minutes} ${ampm}`;
   }
   
   // Update the time every second

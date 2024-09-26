@@ -22,10 +22,38 @@ window.onload = function() {
     // Update the time display
     document.getElementById('real-time-clock').innerHTML = timeString;
   }
+
+  function updateExpiration() {
+    const now = new Date();
+
+    // Define the months array to get the month in "Sep" format
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+    // Get month, day, year
+    const month = months[now.getMonth()];
+    const day = now.getDate();
+    const year = now.getFullYear();
+
+    // Get hours and minutes
+    let hours = now.getHours() + 2;
+    let minutes = now.getMinutes() + 30;
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert 24-hour format to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // If hour is 0, display as 12
+    minutes = minutes < 10 ? '0' + minutes : minutes; // Add leading zero if necessary
+
+    // Combine all to create the formatted string
+    const formattedDate = `Expires ${month} ${day}, ${year} at ${hours}:${minutes} ${ampm}`;
+
+    document.getElementById("expires").innerHTML = `Expires ${month} ${day}, ${year} at ${hours}:${minutes} ${ampm}`;
+  }
   
   // Update the time every second
   setInterval(updateTime, 1000);
   
   // Initialize the time display
   updateTime();
+  updateExpiration();
 };
